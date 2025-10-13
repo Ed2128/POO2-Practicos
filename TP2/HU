@@ -1,0 +1,49 @@
+Rol Cliente:
+HU-01: Visualizar el detalle del carrito de compras.
+Como cliente, quiero ver el detalle de mi carrito de compras, para saber qué productos estoy comprando y su costo total antes de pagar.
+Criterios de aceptación:
+  1. El carrito debe mostrar la información detallada de cada producto (nombre, imagen, cantidad, precio unitario y subtotal).
+  2.Si algún producto no tiene stock disponible al momento de la revisión, debe eliminarse automáticamente y mostrarse un aviso al usuario.
+  3.El total del carrito debe actualizarse en tiempo real al agregar o quitar productos.
+  4.El usuario debe poder modificar cantidades o eliminar ítems desde el mismo carrito.
+
+HU-02: Seguimiento de pedidos.
+Como cliente, quiero ver el seguimiento de mis pedidos, para saber cuándo van a llegar y si existen demoras o inconvenientes.
+Criterios de aceptación:
+  1.El sistema debe mostrar la fecha y hora estimada de salida y llegada del pedido.
+  2.Si se produce una demora, el estado del pedido debe actualizarse automáticamente indicando el nuevo tiempo estimado.
+  3.El sistema debe enviar notificaciones sobre el estado del pedido a través de los canales configurados por el usuario (correo electrónico, SMS, o notificaciones móviles).
+  4.El usuario debe poder ver el historial de actualizaciones del pedido (preparación, envío, en tránsito, entregado, cancelado).
+
+HU-03: Cancelar pedido.
+Como cliente, quiero poder cancelar un pedido realizado, para evitar recibir un producto que ya no deseo o que pedí por error.
+Criterios de aceptación:
+  1.El sistema debe permitir la cancelación solo si el pedido aún no ha sido despachado.
+  2.Al cancelar un pedido, el sistema debe actualizar automáticamente su estado a “Cancelado”.
+  3.El sistema debe enviar una notificación al cliente confirmando la cancelación, indicando el número de pedido y la fecha de la solicitud.
+  4.Si el pedido fue pagado, el sistema debe generar automáticamente una solicitud de reembolso según el método de pago utilizado.
+  5.El historial del pedido debe reflejar el evento de cancelación, mostrando la fecha y hora de la acción.
+
+HU-04: Confirmación y pago del pedido.
+Como cliente, quiero confirmar y pagar mi pedido de forma segura, para finalizar la compra con confianza.
+Criterios de aceptación:
+  1.El usuario puede elegir entre múltiples métodos de pago (tarjeta, transferencia, efectivo).
+  2.El sistema debe mostrar un resumen del pedido antes de confirmar el pago.
+  3.Si el pago se realiza con éxito, se debe generar un comprobante electrónico y enviar al correo del cliente.
+  4.En caso de error o cancelación, el sistema debe informar claramente el motivo y permitir reintentar.
+
+Rol Administrador:
+HU-05: Modificación de precios.
+Como administrador, quiero poder modificar los precios de los productos, para mantenerlos actualizados frente a cambios de costos, promociones o estrategias comerciales.
+Criterios de aceptación:
+  1.El sistema debe registrar la fecha, hora y usuario que realizó la modificación de precio.
+  2.El producto debe quedar temporalmente inhabilitado para la venta mientras se actualiza su precio.
+  3.Debe existir un historial de cambios de precios accesible solo para administradores.
+  4.El sistema debe validar que el nuevo precio no sea menor que el costo base del producto (para evitar pérdidas accidentales).
+
+HU-06: Gestión de stock automática:
+Como administrador, quiero que el sistema actualice automáticamente el stock al realizar ventas o ingresos de mercadería, para mantener un inventario preciso.
+Criterios de aceptación:
+  1.Cada venta reduce automáticamente la cantidad disponible del producto.
+  2.Si un producto llega a stock cero, debe marcarse como “no disponible”.
+  3.El sistema debe generar alertas cuando un producto alcanza el nivel mínimo de stock configurado.
