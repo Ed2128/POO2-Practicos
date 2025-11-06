@@ -25,10 +25,10 @@ public class MainComputadora {
         // Se agregan extras (decoradores)
         Componente gabineteConExtras = new GarantiaExtendida(new ServicioInstalacion(gabinete));
 
-        System.out.println("🖥️ CONFIGURACIÓN DEL EQUIPO:");
+        System.out.println(" CONFIGURACIÓN DEL EQUIPO:");
         System.out.println(gabinete.toString());
 
-        System.out.println("\n💰 Precio base del equipo: $" + gabinete.getPrecio());
-        System.out.println("💎 Precio con extras: $" + gabineteConExtras.getPrecio());
+        System.out.println("\n Precio base del equipo: $" + gabinete.getPrecio());
+        System.out.println(" Precio con extras: $" + gabineteConExtras.getPrecio());
     }
 }
