@@ -1,18 +1,35 @@
-## Getting Started
+## Justificación de elección de patrones.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Escenario 1 – Sistema de Ensamblaje de Computadoras
+**Patrones aplicados:** `Composite` y `Decorator`
 
-## Folder Structure
+- **Problemas que resuelven:**  
+  Se necesitaba tratar de la misma forma a componentes individuales (CPU, RAM, SSD) y a conjuntos de componentes (Gabinete, Placa Madre), además de poder agregar extras opcionales sin modificar las clases originales.  
 
-The workspace contains two folders by default, where:
+- **Justificación:**  
+  El patrón **Composite** permite componer objetos en estructuras jerárquicas y tratarlos de manera uniforme, resolviendo la diferencia entre elementos simples y compuestos.  
+  El patrón **Decorator** resulta adecuado porque permite añadir responsabilidades dinámicamente (como garantía o instalación) sin alterar las clases base, evitando herencias innecesarias y favoreciendo la extensión flexible.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+---
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## Escenario 2 – Generación de Reportes Fiscales
+**Patrón aplicado:** `Facade`
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+- **Problema que resuelve:**  
+  El cliente debía interactuar con varias clases (ConectorDB, ServicioWebAFIP, ProcesadorDeImpuestos, RenderizadorPDF), generando acoplamiento y complejidad excesiva.
 
-## Dependency Management
+- **Justificación:**  
+  El patrón **Facade** simplifica el acceso a los subsistemas creando una única interfaz de alto nivel que centraliza las operaciones necesarias para generar el reporte.  
+  Es la mejor elección frente a otras alternativas porque reduce el acoplamiento y mejora la mantenibilidad, sin modificar las clases internas.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+---
+
+## Escenario 3 – Integración con API de Logística
+**Patrón aplicado:** `Adapter`
+
+- **Problema que resuelve:**  
+  La nueva API `ApiLogisticaVeloz` tiene métodos y tipos de datos distintos a los esperados por la interfaz interna `IServicioEnvio`, impidiendo su integración directa.
+
+- **Justificación:**  
+  El patrón **Adapter** traduce la interfaz externa a la interna del sistema, resolviendo las incompatibilidades sin modificar ninguno de los dos componentes.  
+  Es la elección adecuada porque permite integrar el nuevo servicio manteniendo bajo acoplamiento y reutilizando la lógica existente, a diferencia de alternativas que implicarían reescritura o duplicación de código.
